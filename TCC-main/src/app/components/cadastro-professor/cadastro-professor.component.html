@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <div class="header-inicial">
+      <div class="title">
+        <h1>APLICATIVO WEB PARA AULAS DE INFORMÁTICA DO ENSINO FUNDAMENTAL</h1>
+      </div>
+      <nav>
+        <a href="#">Escolas</a>
+        <a href="#">Novidades</a>
+      </nav>
+    </div>
+  </header>
+  <body>
+    <fieldset>
+      <legend>Cadastro</legend>
+      <form [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" formControlName="nome" required>
+        
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" formControlName="senha" required>
+      
+        <label for="confirmarSenha">Confirmar Senha:</label>
+        <input type="password" id="confirmarSenha" formControlName="confirmarSenha" required>
+      
+        <label for="escola">Escola:</label>
+        <input type="text" id="escola" formControlName="escola">
+      
+        <label for="numero">Número:</label>
+        <input type="text" id="numero" formControlName="numero">
+      
+        <button type="submit" [disabled]="cadastroForm.invalid">Cadastrar</button>
+      </form>
+    </fieldset>
+  </body>
+</body>
+</html>
